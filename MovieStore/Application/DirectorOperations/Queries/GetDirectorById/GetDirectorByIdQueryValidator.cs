@@ -1,0 +1,12 @@
+﻿using FluentValidation;
+
+namespace MovieStore.Application.DirectorOperations.Queries.GetDirectorById
+{
+    public class GetDirectorByIdQueryValidator : AbstractValidator<GetDirectorByIdQuery>
+    {
+        public GetDirectorByIdQueryValidator()
+        {
+            RuleFor(query=>query.Id).NotNull().NotEmpty().GreaterThan(0);
+        }
+    }
+}
